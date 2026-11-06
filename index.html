@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт Олега Шубкина</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Courier New', monospace;
+            background: linear-gradient(135deg, #d4a574 0%, #c19a6b 50%, #a0826d 100%);
+            color: #3d2817;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 40px 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            transform: rotate(-2deg);
+            text-shadow: 3px 3px 0px #8b6f47;
+        }
+
+        h1 {
+            font-size: 4.5rem;
+            font-weight: 900;
+            letter-spacing: -3px;
+            background: #3d2817;
+            color: #d4a574;
+            padding: 20px 40px;
+            display: inline-block;
+            border: 8px solid #3d2817;
+            box-shadow: 15px 15px 0px rgba(61, 40, 23, 0.5);
+            transform: skew(-5deg, 2deg);
+        }
+
+        .content {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .column {
+            background: rgba(212, 165, 116, 0.3);
+            border: 5px dashed #3d2817;
+            padding: 30px;
+            min-height: 400px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            line-height: 1.8;
+            position: relative;
+            box-shadow: 10px 10px 0px rgba(61, 40, 23, 0.3);
+        }
+
+        .column:nth-child(1) {
+            transform: rotate(-1deg);
+        }
+
+        .column:nth-child(2) {
+            transform: rotate(1deg) translateY(-20px);
+        }
+
+        .column:nth-child(3) {
+            transform: rotate(-2deg);
+        }
+
+        .column::before {
+            content: attr(data-number);
+            position: absolute;
+            top: -25px;
+            left: 20px;
+            background: #3d2817;
+            color: #d4a574;
+            padding: 5px 15px;
+            font-size: 2rem;
+            transform: rotate(5deg);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            background: #3d2817;
+            color: #d4a574;
+            font-size: 1.1rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            border: 5px solid #d4a574;
+            transform: rotate(1deg);
+            box-shadow: 8px 8px 0px rgba(61, 40, 23, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Сайт Олега Шубкина</h1>
+    </div>
+
+    <div class="content">
+        <div class="column" data-number="1">
+            Разве...
+        </div>
+        <div class="column" data-number="2">
+            Разве...
+        </div>
+        <div class="column" data-number="3">
+            Разве...
+        </div>
+    </div>
+
+    <div class="footer">
+        Все права принадлежат Шубкину Олегу Альбертовичу
+    </div>
+</body>
+</html>
